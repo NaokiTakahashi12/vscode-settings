@@ -1,0 +1,49 @@
+{
+    "workbench.colorTheme": "Abyss",
+    "window.zoomLevel": -1,
+    "C_Cpp.updateChannel": "Insiders",
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindings": [
+        {
+            "before": ["leader","w"],
+            "after": ["<CR>"],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+             "command": "ptex2pdf",
+             "args": [
+                  "-l",
+                  "-ot",
+                  "-kanji=utf8",
+                  "-synctex=1",
+                  "-interaction=nonstopmode",
+                  "-file-line-error",
+                  "%DOC%"
+             ],
+             "name": "ptex2pdf"
+        }
+   ],
+   "latex-workshop.latex.recipes": [
+        {
+             "name": "ptex2pdf",
+             "tools": [
+                  "ptex2pdf"
+             ]
+        }
+   ],
+   "latex-workshop.view.pdf.viewer": "tab",
+   "editor.renderControlCharacters": true
+}
