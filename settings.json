@@ -1,17 +1,29 @@
 {
-    "workbench.colorTheme": "Abyss",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
     "C_Cpp.updateChannel": "Insiders",
+    "vim.visualstar": true,
     "vim.leader": "<space>",
-    "vim.insertModeKeyBindings": [
+    "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": ["j","j"],
+            "before": ["j", "j"],
             "after": ["<Esc>"]
         }
     ],
-    "vim.otherModesKeyBindings": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["leader","w"],
+            "before": [":"],
+            "after": [";"]
+        },
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before": ["g", "r"],
+            "after": ["g", "T"]
+        },
+        {
+            "before": ["leader", "w"],
             "after": ["<CR>"],
             "commands": [
                 {
@@ -21,7 +33,17 @@
             ]
         }
     ],
+    "vim.otherModesKeyBindings": [
+    ],
     "latex-workshop.latex.tools": [
+        {
+            "command": "pbibtex",
+            "args": [
+                "%DOCFILE%.aux",
+                "-kanji=utf8"
+            ],
+            "name": "pbibtex"
+        },
         {
              "command": "ptex2pdf",
              "args": [
@@ -31,19 +53,25 @@
                   "-synctex=1",
                   "-interaction=nonstopmode",
                   "-file-line-error",
-                  "%DOC%"
+                  "%DOCFILE%.tex"
              ],
              "name": "ptex2pdf"
         }
    ],
    "latex-workshop.latex.recipes": [
         {
-             "name": "ptex2pdf",
+             "name": "ChainBuildForLaTeX",
              "tools": [
-                  "ptex2pdf"
+                 "ptex2pdf",
+                 "pbibtex",
+                 "ptex2pdf"
              ]
         }
    ],
-   "latex-workshop.view.pdf.viewer": "tab",
-   "editor.renderControlCharacters": true
+"latex-workshop.view.pdf.viewer": "tab",
+"editor.renderControlCharacters": true,
+"latex-workshop.synctex.afterBuild.enabled": true,
+
+"workbench.iconTheme": "vscode-icons",
+"workbench.colorTheme": "Monokai Dimmed"
 }
